@@ -5,9 +5,32 @@
 	"Description": "",
 	"Modules": [
 		{
+			"Name": "YangGaengSetting",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"AdditionalDependencies": [
+				"CoreUObject"
+			]
+		},
+		{
+			"Name": "YangGaengInteract",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"UMG"
+			]
+		},
+		{
 			"Name": "YangGaeng",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"UMG",
+				"YangGaengSetting",
+				"YangGaengInteract"
+			]
 		}
 	],
 	"Plugins": [

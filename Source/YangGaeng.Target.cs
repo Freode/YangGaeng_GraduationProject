@@ -11,5 +11,7 @@ public class YangGaengTarget : TargetRules
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;
 		ExtraModuleNames.Add("YangGaeng");
+		ExtraModuleNames.Add("YangGaengSetting");
+		ExtraModuleNames.Add("YangGaengInteract");
 	}
 }

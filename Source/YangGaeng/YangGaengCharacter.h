@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "YangGaeng.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
 #include "YangGaengCharacter.generated.h"
