@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "../../YangGaeng/YangGaeng.h"
+#include "YangGaengInteract.h"
 #include "GameFramework/Actor.h"
 #include "InteractBase.generated.h"
 
@@ -42,6 +42,12 @@ public:
 
 	UPROPERTY(VisibleAnywhere, Category = Custom_Base)
 		int32 dbc;
+
+	UPROPERTY(VisibleAnywhere, Category = Custom_Base)
+		int32 kh = 1500;
+
+	UPROPERTY(VisibleAnywhere, Category = Custom_Base)
+		int32 khdab;
 
 protected:
 

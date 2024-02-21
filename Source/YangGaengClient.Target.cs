@@ -11,5 +11,7 @@ public class YangGaengClientTarget : TargetRules
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 		BuildEnvironment = TargetBuildEnvironment.Shared;
 		ExtraModuleNames.Add("YangGaeng");
+		ExtraModuleNames.Add("YangGaengSetting");
+		ExtraModuleNames.Add("YangGaengInteract");
 	}
 }
