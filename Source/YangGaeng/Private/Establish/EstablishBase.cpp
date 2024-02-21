@@ -1,0 +1,27 @@
+// Developed by YangGaeng Team.
+
+
+#include "Establish/EstablishBase.h"
+
+// Sets default values
+AEstablishBase::AEstablishBase()
+{
+ 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+}
+
+// Called when the game starts or when spawned
+void AEstablishBase::BeginPlay()
+{
+	Super::BeginPlay();
+	
+}
+
+// Called every frame
+void AEstablishBase::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+}
+

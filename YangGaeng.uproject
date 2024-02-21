@@ -13,23 +13,23 @@
 			]
 		},
 		{
-			"Name": "YangGaengInteract",
-			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"Engine",
-				"UMG"
-			]
-		},
-		{
 			"Name": "YangGaeng",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
 				"Engine",
 				"UMG",
-				"YangGaengSetting",
-				"YangGaengInteract"
+				"YangGaengSetting"
+			]
+		},
+		{
+			"Name": "YangGaengInteract",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"UMG",
+				"YangGaengSetting"
 			]
 		}
 	],
