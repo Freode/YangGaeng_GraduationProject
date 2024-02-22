@@ -36,34 +36,31 @@ void AEstablishBase::Tick(float DeltaTime)
 }
 
 // 현재 객체가 차지하고 있는 공간 설정
-void AEstablishBase::SetBoxArea(const USceneComponent* Component)
+void AEstablishBase::SetBoxArea(const FVector& Origin, const FVector& BoxExtent)
 {
-	// Component is valid.
-	if (Component != NULL)
-	{
-		// 중심점과 경계에 대한 값 가져오기
-		FVector Origin = Component->Bounds.Origin;
-		FVector BoxExtent = Component->Bounds.BoxExtent;
+	YGLOG(Warning, TEXT("Origin : %s, BoxExtent : %s"), *Origin.ToString(), *BoxExtent.ToString());
 
-		// ===== 현재 객체가 차지할 최대 공간 컬리전 설정 =====
-		FVector _Max = Origin + BoxExtent;
+	// ===== 현재 객체가 차지할 최대 공간 컬리전 설정 =====
+	FVector _Max = Origin + BoxExtent;
 
-		// x, y, z 방향 크기 재설정
-		_Max /= ResizeStep;
-		float _x = FMath::RoundToInt(_Max.X) * ResizeStep;
-		float _y = FMath::RoundToInt(_Max.Y) * ResizeStep;
-		float _z = FMath::Max(FMath::RoundToInt(_Max.Z) * ResizeStep, 100.0f);
+	// x, y, z 방향 크기 재설정
+	// _Max = _Max / ResizeStep;
+	
+	float _x = FMath::RoundToInt(_Max.X);
+	float _y = FMath::RoundToInt(_Max.Y);
+	float _z = FMath::RoundToInt(_Max.Z);
 
-		_x = FMath::Max(_x, _y);
-		FVector _ResizeExtent = FVector(_x, _x, _z);
-		_ResizeExtent += FVector(ResizeGap * 100.0f, ResizeGap * 100.0f, ResizeGap * 100.0f);
+	// YGLOG(Warning, TEXT("X : %f, Y : %f, Z : %f"), _x, _y, _z);
 
-		// 컬리전 재설정
-		Box->SetBoxExtent(_ResizeExtent, true);
-		Box->SetWorldRotation(UKismetMathLibrary::MakeRotFromX(FVector(1.0f, 0.0f, 0.0f)));
-	}
-	else
-	{
-		// 아무것도 하지 않음.
-	}
+	_x = FMath::Max(_x, _y);
+	// _x = FMath::Max(_x, 100.0f);
+	FVector _ResizeExtent = FVector(_x, _x, _z);
+	_ResizeExtent += FVector(ResizeGap * 100.0f, ResizeGap * 100.0f, ResizeGap * 100.0f);
+
+	// YGLOG(Warning, TEXT("New Extent : %s"), *_ResizeExtent.ToString());
+
+	// 컬리전 재설정
+	Box->SetBoxExtent(_ResizeExtent, true);
+	Box->SetWorldRotation(UKismetMathLibrary::MakeRotFromX(FVector(1.0f, 0.0f, 0.0f)));
+
 }

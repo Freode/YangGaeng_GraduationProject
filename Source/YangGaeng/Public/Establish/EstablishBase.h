@@ -10,7 +10,7 @@
 UENUM(BlueprintType)
 enum class EEstablishType : uint8
 {
-	NONE,
+	DEFAULT,
 	STATIC_MESH,
 	SKELETAL_MESH
 };
@@ -47,7 +47,8 @@ public:
 protected:
 
 	// 현재 객체가 차지하고 있는 공간 설정
-	void SetBoxArea(const USceneComponent* Component);
+	UFUNCTION(BlueprintCallable, Category = Base)
+		void SetBoxArea(const FVector& Origin, const FVector& BoxExtent);
 
 	// 공간 크기 재설정 단계
 	UPROPERTY(BlueprintReadOnly, Category = Base)
