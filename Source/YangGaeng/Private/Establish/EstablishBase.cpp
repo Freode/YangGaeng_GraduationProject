@@ -54,13 +54,14 @@ void AEstablishBase::SetBoxArea(const FVector& Origin, const FVector& BoxExtent)
 
 	_x = FMath::Max(_x, _y);
 	// _x = FMath::Max(_x, 100.0f);
-	FVector _ResizeExtent = FVector(_x, _x, _z);
-	_ResizeExtent += FVector(ResizeGap * 100.0f, ResizeGap * 100.0f, ResizeGap * 100.0f);
+	FVector _ResizeExtent = FVector(_x, _x, _z * 0.5f);
+	_ResizeExtent += FVector(ResizeGap * 100.0f, ResizeGap * 100.0f, ResizeGap * 100.0f * 0.5f);
 
 	// YGLOG(Warning, TEXT("New Extent : %s"), *_ResizeExtent.ToString());
 
 	// 컬리전 재설정
 	Box->SetBoxExtent(_ResizeExtent, true);
+	Box->SetRelativeLocation(FVector(0.0f, 0.0f, _ResizeExtent.Z));
 	Box->SetWorldRotation(UKismetMathLibrary::MakeRotFromX(FVector(1.0f, 0.0f, 0.0f)));
 
 }
