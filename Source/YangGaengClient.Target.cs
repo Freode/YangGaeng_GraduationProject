@@ -13,5 +13,6 @@ public class YangGaengClientTarget : TargetRules
 		ExtraModuleNames.Add("YangGaeng");
 		ExtraModuleNames.Add("YangGaengSetting");
 		ExtraModuleNames.Add("YangGaengInteract");
-	}
+        ExtraModuleNames.Add("YangGaengUI");
+    }
 }

@@ -2,14 +2,14 @@
 
 using UnrealBuildTool;
 
-public class YangGaeng : ModuleRules
+public class YangGaengUI : ModuleRules
 {
-	public YangGaeng(ReadOnlyTargetRules Target) : base(Target)
+	public YangGaengUI(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "EnhancedInput", "UMG" });
 
-		PrivateDependencyModuleNames.AddRange(new string[] { "YangGaengSetting", "YangGaengUI" });
+		PrivateDependencyModuleNames.AddRange(new string[] { });
 	}
 }
