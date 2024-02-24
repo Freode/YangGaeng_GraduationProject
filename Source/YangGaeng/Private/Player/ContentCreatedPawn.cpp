@@ -45,15 +45,15 @@ void AContentCreatedPawn::SetupPlayerInputComponent(UInputComponent* PlayerInput
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	// Input Mapping Context 연결
-	if (APlayerController* LocalPlayer = Cast<APlayerController>(GetController()))
-	{
-		if (UEnhancedInputLocalPlayerSubsystem* InputSystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
-		{
-			YGLOG_SIMPLE(Warning);
-			InputSystem->AddMappingContext(DefaultMappingContext.LoadSynchronous(), 10);
-		}
-	}
+	//// Input Mapping Context 연결
+	//if (ULocalPlayer* LocalPlayer = Cast<ULocalPlayer>(GetController()))
+	//{
+	//	if (UEnhancedInputLocalPlayerSubsystem* InputSystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
+	//	{
+	//		YGLOG_SIMPLE(Warning);
+	//		InputSystem->AddMappingContext(DefaultMappingContext.LoadSynchronous(), 10);
+	//	}
+	//}
 
 	// Action Binding 설정
 	if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent))
