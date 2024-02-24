@@ -10,6 +10,6 @@ public class YangGaeng : ModuleRules
 
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "EnhancedInput", "UMG" });
 
-		PrivateDependencyModuleNames.AddRange(new string[] { "YangGaengSetting", "YangGaengUI" });
+		PrivateDependencyModuleNames.AddRange(new string[] { "YangGaengSetting" });
 	}
 }
